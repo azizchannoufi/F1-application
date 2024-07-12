@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:furmule_one/views/splachscreen.dart';
-import 'package:furmule_one/views/login.dart';
+import 'package:furmule_one/views/home.dart';
+import 'package:furmule_one/widgets/spalshWarpper.dart';
 void main() {
   runApp(MyApp());
 }
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const Login(),
-      // const SplashScreen(),
+      home:Home(),
+      // SplashScreenWrapper(),
       debugShowCheckedModeBanner: false, 
     );
   }
