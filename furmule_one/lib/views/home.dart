@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:furmule_one/viewmodels/user_view_model.dart';
+import 'package:provider/provider.dart';
+import 'package:furmule_one/models/driver.dart';
+import 'package:furmule_one/library/globals.dart' as globals;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -8,6 +13,57 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<Driver> drivers = globals.drivers.map((driverMap) => Driver.fromMap(driverMap)).toList();
+
+  Widget _data(Driver driver){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(right:30,top: 10),
+          child: Text(driver.id.toString(),
+          style: TextStyle(
+            color: Colors.red,
+            fontSize: 25,
+            fontWeight: FontWeight.bold
+          ),),
+        ),
+        Container(
+          margin: EdgeInsets.only(right:10,top: 10),
+          width: 80,
+          height: 80,
+          child: Image.asset(driver.image),
+        ),
+         SizedBox(height: 20),
+        Column(
+          
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+          margin: EdgeInsets.only(top: 10),
+
+              child: Text( '${driver.prenom} ${driver.nom}',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold
+              ),
+              ),
+            ),
+              Container(
+                          margin: EdgeInsets.only(right:120),
+
+              child: Text("Sponsor",
+              style: TextStyle(
+                fontSize: 18,
+              ),
+              ),
+            ),
+          ]
+        ),
+      ]
+    );
+  }
+
   Widget _fetchdata() {
     return Expanded(
       child: Container(
@@ -37,8 +93,14 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(height: 10),
-            // Ajoutez ici le contenu supplémentaire de votre _fetchdata
-          ],
+            Expanded(
+              child: ListView.builder(
+                itemCount: drivers.length,
+                itemBuilder: (context, index) {
+                  return _data(drivers[index]);
+                },
+              ),
+            ),          ],
         ),
       ),
     );
@@ -46,6 +108,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+        final userViewModel = Provider.of<UserViewModel>(context);
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 251, 17, 0),
       body: Column(
@@ -73,7 +137,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Text(
-                      "aziz Channoufi",
+                      '${userViewModel.firstname} ${userViewModel.lastname}',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -90,3 +154,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+

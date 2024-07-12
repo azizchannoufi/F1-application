@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:furmule_one/viewmodels/user_view_model.dart';
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -8,6 +9,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _firstName= TextEditingController();
+  final _lastName= TextEditingController();
   Widget _buildInputs() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -30,6 +33,7 @@ class _LoginState extends State<Login> {
               width: 300,
               height: 50,
               child: TextField(
+                controller: _firstName,
                 decoration: InputDecoration(
                   hintText: 'Enter your first name',
                   border: OutlineInputBorder(),
@@ -63,6 +67,7 @@ class _LoginState extends State<Login> {
               width: 300,
               height: 50,
               child: TextField(
+                controller: _lastName,
                 decoration: InputDecoration(
                   hintText: 'Enter your last name',
                   border: OutlineInputBorder(),
@@ -94,7 +99,12 @@ class _LoginState extends State<Login> {
           borderRadius: BorderRadius.circular(5)
         ), 
         child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          final userViewModel = Provider.of<UserViewModel>(context, listen: false);
+          userViewModel.setFirstName(_firstName.text);
+          userViewModel.setLastName(_lastName.text);
+          Navigator.pushNamed(context, 'home'); 
+                 },
         child: Text('Next    >',style: TextStyle(
           color: Colors.white,
           fontSize: 20,
@@ -113,6 +123,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Container(
         child: SingleChildScrollView(
           child: Column(

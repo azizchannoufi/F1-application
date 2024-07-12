@@ -5,69 +5,69 @@
     'nom': 'Max',
     'prenom': 'Verstappen',
     'sponsor': 'Red Bull',
-    'image': 'https://example.com/images/max_verstappen.jpg'
+    'image': 'assets/images/im1.png'
   },
   {
     'id': '2',
     'nom': 'Lewis',
     'prenom': 'Hamilton',
     'sponsor': 'Mercedes',
-    'image': 'https://example.com/images/lewis_hamilton.jpg'
+    'image': 'assets/images/im2.png'
   },
   {
     'id': '3',
     'nom': 'Valtteri',
     'prenom': 'Bottas',
     'sponsor': 'Mercedes',
-    'image': 'https://example.com/images/valtteri_bottas.jpg'
+    'image': 'assets/images/im3.png'
   },
   {
     'id': '4',
     'nom': 'Sergio',
     'prenom': 'Perez',
     'sponsor': 'Red Bull',
-    'image': 'https://example.com/images/sergio_perez.jpg'
+    'image': 'assets/images/im4.png'
   },
   {
     'id': '5',
     'nom': 'Charles',
     'prenom': 'Leclerc',
     'sponsor': 'Ferrari',
-    'image': 'https://example.com/images/charles_leclerc.jpg'
+    'image': 'assets/images/im5.png'
   },
   {
     'id': '6',
     'nom': 'Lando',
     'prenom': 'Norris',
     'sponsor': 'McLaren',
-    'image': 'https://example.com/images/lando_norris.jpg'
+    'image': 'assets/images/im6.png'
   },
   {
     'id': '7',
     'nom': 'Carlos',
     'prenom': 'Sainz',
     'sponsor': 'Ferrari',
-    'image': 'https://example.com/images/carlos_sainz.jpg'
+    'image': 'assets/images/im7.png'
   },
   {
     'id': '8',
     'nom': 'Daniel',
     'prenom': 'Ricciardo',
     'sponsor': 'McLaren',
-    'image': 'https://example.com/images/daniel_ricciardo.jpg'
+    'image': 'assets/images/im8.png'
   },
   {
     'id': '9',
     'nom': 'Sebastian',
     'prenom': 'Vettel',
     'sponsor': 'Aston Martin',
-    'image': 'https://example.com/images/sebastian_vettel.jpg'
+    'image': 'assets/images/im9.png'
   },
   {
     'id': '10',
     'nom': 'Fernando',
     'prenom': 'Alonso',
     'sponsor': 'Alpine',
-    'image': 'https://example.com/images/fernando_alonso.jpg'
+    'image': 'assets/images/im10.png'
   }
 ];
