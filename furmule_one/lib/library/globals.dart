@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
 
-const List<MaterialColor> primaries = <MaterialColor>[
-  Colors.red
-  ];
   const List<Map<String, String>> drivers = [
   {
     'id': '1',
